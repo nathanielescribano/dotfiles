@@ -75,7 +75,7 @@
 	url = git://github.com/rson/vim-conque.git
 [submodule ".vim/bundle/vim-commandt"]
 	path = .vim/bundle/vim-commandt
-	url = git://git.wincent.com/command-t.git
+	url = git://github.com/wincent/Command-T.git
 [submodule ".vim/bundle/vim-bufonly"]
 	path = .vim/bundle/vim-bufonly
 	url = git://github.com/duff/vim-bufonly.git
