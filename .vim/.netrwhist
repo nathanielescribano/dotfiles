@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/nescribano/.pentadactyl'
+let g:netrw_dirhist_2='/Users/nescribano/Notes'
+let g:netrw_dirhist_3='/Users/nescribano/aoeu'
+let g:netrw_dirhist_4='/Users/nescribano/.vim/bundle/vim-rubyconque'
