@@ -57,7 +57,7 @@
 	url = https://github.com/edsono/vim-matchit.git
 [submodule ".vim/bundle/vim-lusty"]
 	path = .vim/bundle/vim-lusty
-	url = git://github.com/sjbach/lusty.git
+	url = https://github.com/nathanielescribano/lusty.git
 [submodule ".vim/bundle/vim-jslint"]
 	path = .vim/bundle/vim-jslint
 	url = git://github.com/hallettj/jslint.vim.git
