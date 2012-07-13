@@ -442,35 +442,9 @@ let g:pathogen_disabled = []
 call add(g:pathogen_disabled, 'vim-asynccommand')
 if !has("gui_running")
   call add(g:pathogen_disabled, 'vim-powerline')
+else
+  set gfn=DejaVu\ Sans\ Mono:h12
 endif
 
 call pathogen#infect()
 call pathogen#helptags()
-
-" I don't use these anymore, but may be again
-" in the future
-"
-" function! RunSpec (L)
-"   let tf = tempname().".html"
-"   let out = system ("spec --color --format html:".tf." --drb ".bufname("%")." --line ".a:L)
-"   if strlen(out) > 0
-"     echo out
-"   endif
-"   " comment out this next line after finishing the deprecation warnings
-"   "call system ("spec --color --format html:".tf." --drb ".bufname("%")." --line ".a:L)
-"   call system ("open -a 'Quick Look Droplet' ".tf)
-"   echo "DONE"
-" endfunction
-" 
-" function! RunCucumber (L)
-"   let tf = tempname().".html"
-"   let out = system ("bundle exec cucumber --drb --color --format html --out ".tf." ".bufname("%").":".a:L)
-"   if strlen(out) > 0
-"     echo out
-"   endif
-"   " comment out this next line after finishing the deprecation warnings
-"   call system ("open -a 'Quick Look Droplet' ".tf)
-"   echo "DONE"
-" endfunction
-
-" let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
