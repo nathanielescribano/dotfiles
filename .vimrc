@@ -289,8 +289,12 @@ iab sop     System.out.println
 " Set up the window colors and size
 "-----------------------------------------------------------------------------
 "colorscheme solarized
-set background=dark
-colorscheme solarized
+if has("gui_running")
+  colorscheme Tomorrow-Night
+else
+  set background=dark
+  colorscheme solarized
+endif
 
 :nohls
 
@@ -435,12 +439,9 @@ set wildignore+=.git,.svn,.log,*.png,*.jpg
 " I'm just keeping around because
 " I may want to use them later
 let g:pathogen_disabled = []
-" call add(g:pathogen_disabled, 'numbers')
 call add(g:pathogen_disabled, 'vim-asynccommand')
 if !has("gui_running")
   call add(g:pathogen_disabled, 'vim-powerline')
-else
-    " let g:Powerline_symbols = 'fancy'
 endif
 
 call pathogen#infect()
