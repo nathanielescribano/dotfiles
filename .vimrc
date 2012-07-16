@@ -342,8 +342,14 @@ set laststatus=2 statusline=%02n:%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 " easymotion
 "let g:EasyMotion_keys = '1234567890'
 "let g:EasyMotion_do_shade = 0
-" let g:EasyMotion_leader_key = '<Leader>'
-let g:EasyMotion_leader_key = 'f'
+let g:EasyMotion_leader_key = '<Leader>'
+" let g:EasyMotion_leader_key = 'f'
+map f <Leader>f
+map F <Leader>F
+
+" remapping e to _e to avoid conflicts 
+" with my buffer scrolling
+let g:EasyMotion_mapping_e = '_e'
 
 nnoremap <leader>' :Ack 
 nnoremap <leader>, :CommandT<CR>
@@ -443,7 +449,9 @@ call add(g:pathogen_disabled, 'vim-asynccommand')
 if !has("gui_running")
   call add(g:pathogen_disabled, 'vim-powerline')
 else
-  set gfn=DejaVu\ Sans\ Mono:h12
+  "set gfn=DejaVu\ Sans\ Mono:h12
+  "set gfn=Menlo\ Bold:h12
+  set gfn=Menlo:h12
 endif
 
 call pathogen#infect()
