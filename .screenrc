@@ -1,0 +1,33 @@
+#escape ^s
+startup_message off
+defflow auto
+defscrollback 5000
+termcapinfo xterm* ti@:te@
+altscreen on
+autodetach on
+msgwait 3
+
+#change the hardstatus settings to give an window list at the bottom of the
+#screen, with the time and date and with the current window highlighted
+defutf8 on
+hardstatus alwayslastline
+hardstatus string '%{gk}[ %{G}%H %{g}][%= %{wk}%?%-Lw%?%{=b kR}(%{W}%n*%f %t%?(%u)%?%{=b kR})%{= kw}%?%+Lw%?%?%= %{g}][%{Y}%l%{g}]%{=b C}[ %m/%d %c ]%{W}'
+
+startup_message off
+
+#term xterm-256color
+
+bind P paste .
+
+#page up and page down scroll (xterm)
+bindkey "^[[5;5~" eval "copy" "stuff ^u"
+bindkey -m "^[[5;5~" stuff ^u
+bindkey -m "^[[6;5~" stuff ^d
+
+#ctrl-left and ctrl-right are prev/next
+bindkey "^[[1;5D" prev
+bindkey "^[[1;5C" next
+
+# create new window and prompt for its title
+bind C eval "screen" "title" "stuff ^u"
+
