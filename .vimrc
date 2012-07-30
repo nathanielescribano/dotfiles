@@ -382,6 +382,9 @@ set list listchars=tab:\ \ ,trail:·
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
 
+" Disable swap files - trying it out for now
+set noswapfile
+
 " ZoomWin configuration
 map <Leader><Leader> :ZoomWin<CR>
 
@@ -453,6 +456,10 @@ else
   "set gfn=Menlo\ Bold:h12
   set gfn=Menlo:h12
 endif
+
+" this removes all the ruby deduggers in all buffers
+map <Leader>d :bufdo g/^\s*debugger\s*$\\|^\s*binding.pry\s*$/d \| update <CR>
+
 
 call pathogen#infect()
 call pathogen#helptags()
