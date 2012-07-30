@@ -1,0 +1,16 @@
+" map tab movements how i like
+map K gt
+map J gT
+
+" key to show and hide the url bar
+map <A-Down> :set go+=BTm<CR>
+map <A-Up> :set go-=BTm<CR>
+
+" set macvim as editor
+set editor='/usr/bin/mvim -f +<line> <file>'
+
+" no scroll bar
+set go=ns
+
+" no tab bar
+set showtabline=never
