@@ -92,5 +92,5 @@
 	path = .vim/bundle/vim-ack
 	url = git://github.com/mileszs/ack.vim.git
 [submodule "oh-my-zsh"]
-	path = oh-my-zsh
+	path = .oh-my-zsh
 	url = git://github.com/sorin-ionescu/oh-my-zsh.git
