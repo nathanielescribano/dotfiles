@@ -62,3 +62,6 @@ term screen-256color-bce                                             # Terminal.
 bindkey -m "^[[5;5~" stuff ^u
 bindkey -m "^[[6;5~" stuff ^d
 
+# set escape key to `
+escape ``
+
