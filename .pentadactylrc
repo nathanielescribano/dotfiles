@@ -2,6 +2,9 @@
 map K gt
 map J gT
 
+" map previous selected tab
+map \a <C-^>
+
 " key to show and hide the url bar
 map <A-Down> :set go+=BTm<CR>
 map <A-Up> :set go-=BTm<CR>
@@ -12,5 +15,9 @@ set editor='/usr/bin/mvim -f +<line> <file>'
 " no scroll bar
 set go=ns
 
-" no tab bar
+" no tab bar by default
 set showtabline=never
+
+" keys to show the tabbar
+map <A-Right> :set showtabline=always<CR>
+map <A-Left> :set showtabline=never<CR>

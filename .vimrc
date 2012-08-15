@@ -388,6 +388,11 @@ set noswapfile
 " ZoomWin configuration
 map <Leader><Leader> :ZoomWin<CR>
 
+" Tagbar toggle
+map <Leader>= :TagbarToggle<CR>
+let g:tagbar_left=1
+let g:tagbar_autofocus=1
+
 " Remember last location in file
 " I LOVE THIS
 if has("autocmd")
