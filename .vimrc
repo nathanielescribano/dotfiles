@@ -422,17 +422,6 @@ map cp :let @+ = expand("%:p")<CR>
 " copies all yanking to clipboard
 set clipboard=unnamed
 
-" toggles relative and absolute number
-function! NumberToggle()
-  if(&relativenumber == 1)
-    set number
-  else
-    set relativenumber
-  endif
-endfunction
-
-nnoremap <C-n> :call NumberToggle()<cr>
-
 " map that aligns on '=' marks
 vnoremap <C-a> :Tabularize /=<CR>
 
