@@ -91,9 +91,6 @@
 [submodule ".vim/bundle/vim-ack"]
 	path = .vim/bundle/vim-ack
 	url = git://github.com/mileszs/ack.vim.git
-[submodule "oh-my-zsh"]
-	path = .oh-my-zsh
-	url = git://github.com/sorin-ionescu/oh-my-zsh.git
 [submodule ".vim/bundle/vim-tagbar"]
 	path = .vim/bundle/vim-tagbar
 	url = git://github.com/majutsushi/tagbar
