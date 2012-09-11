@@ -94,3 +94,6 @@
 [submodule ".vim/bundle/vim-tagbar"]
 	path = .vim/bundle/vim-tagbar
 	url = git://github.com/majutsushi/tagbar
+[submodule ".zprezto"]
+	path = .zprezto
+	url = https://github.com/sorin-ionescu/prezto.git

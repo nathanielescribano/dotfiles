@@ -1,0 +1,1 @@
+/Users/nescribano/.dotfiles/.zprezto/runcoms/zlogin

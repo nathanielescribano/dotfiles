@@ -454,6 +454,8 @@ endif
 " this removes all the ruby deduggers in all buffers
 map <Leader>d :bufdo g/^\s*debugger\s*$\\|^\s*binding.pry\s*$/d \| update <CR>
 
+" swap 2 words
+:nnoremap <silent> gw "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>
 
 call pathogen#infect()
 call pathogen#helptags()
