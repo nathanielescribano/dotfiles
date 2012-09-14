@@ -1,0 +1,5 @@
+# This isn't really meant for other people - so it may not work correctly/ be up to date
+# also - make sure you understand what the setup script does - because it'll delete
+# a bunch of your stuff
+git clone --recursive https://github.com/nathanielescribano/dotfiles.git ~/.dotfiles
+./setup
