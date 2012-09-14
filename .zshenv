@@ -1,1 +1,0 @@
-/Users/nescribano/.dotfiles/.zprezto/runcoms/zshenv
