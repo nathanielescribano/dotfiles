@@ -2,8 +2,12 @@
 map K gt
 map J gT
 
+" faster scrolling
+noremap j 5j
+noremap k 5k
+
 " map previous selected tab
-map \a <C-^>
+map a <C-^>
 
 " key to show and hide the url bar
 map <A-Down> :set go+=BTm<CR>
@@ -21,3 +25,7 @@ set showtabline=never
 " keys to show the tabbar
 map <A-Right> :set showtabline=always<CR>
 map <A-Left> :set showtabline=never<CR>
+
+" toggle bookmarks toolbar
+map <Leader>. :tbt Bookmarks Toolbar<CR>
+
