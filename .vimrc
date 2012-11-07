@@ -351,7 +351,7 @@ map F <Leader>F
 " with my buffer scrolling
 let g:EasyMotion_mapping_e = '_e'
 
-nnoremap <leader>' :Ack 
+nnoremap <leader>' :Ag 
 nnoremap <leader>, :CommandT<CR>
 nnoremap <leader>x :BufOnly<CR>
 nnoremap <leader>q :Bclose<CR>
@@ -434,6 +434,10 @@ noremap ^ 0
 " lets command-t search through more files
 let g:CommandTMaxFiles = 50000
 
+" syntastic settings
+" let g:syntastic_mode_map = { 'mode': 'passive',
+"                            \ 'active_filetypes': [],
+"                            \ 'passive_filetypes': ['ruby'] }
 " sets files for command-t to ignore
 set wildignore+=.git,.svn,.log,*.png,*.jpg
 

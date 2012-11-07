@@ -30,3 +30,5 @@ done
 cd ~/.dotfiles/.vim/bundle/vim-commandt
 rake make
 
+cd ~/.dotfiles/.vim/bundle/vim-ag
+rake install
