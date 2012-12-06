@@ -431,6 +431,11 @@ vnoremap <C-a> :Tabularize /=<CR>
 noremap 0 ^
 noremap ^ 0
 
+" spacebar does a page down
+map <Space> 
+" Page Up when press Shift Space
+map <S-Space> 
+
 " lets command-t search through more files
 let g:CommandTMaxFiles = 50000
 
