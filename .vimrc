@@ -293,7 +293,9 @@ if has("gui_running")
   colorscheme Tomorrow-Night
 else
   set background=dark
-  colorscheme solarized
+  " colorscheme base16-default
+  colorscheme Tomorrow-Night
+  " colorscheme solarized
 endif
 
 :nohls
@@ -453,7 +455,7 @@ set wildignore+=.git,.svn,.log,*.png,*.jpg
 let g:pathogen_disabled = []
 call add(g:pathogen_disabled, 'vim-asynccommand')
 if !has("gui_running")
-  call add(g:pathogen_disabled, 'vim-powerline')
+  " call add(g:pathogen_disabled, 'vim-powerline')
 else
   "set gfn=DejaVu\ Sans\ Mono:h12
   "set gfn=Menlo\ Bold:h12
