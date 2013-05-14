@@ -295,6 +295,7 @@ else
   set background=dark
   " colorscheme base16-default
   colorscheme Tomorrow-Night
+  " let base16colorspace=256  " Access colors present in 256 colorspace
   " colorscheme solarized
 endif
 
@@ -356,12 +357,14 @@ let g:EasyMotion_mapping_e = '_e'
 nnoremap <leader>' :Ag 
 nnoremap <leader>, :CommandT<CR>
 nnoremap <leader>x :BufOnly<CR>
-nnoremap <leader>q :Bclose<CR>
+nnoremap <leader>q :Bclose!<CR>
 
 " Cmd-Shift-R for RSpec
 nmap <silent> <D-R> :call RunRspecCurrentFileConque()<CR>
+nmap <leader>R :call RunRspecCurrentFileConque()<CR>
 " Cmd-r for RSpec Current Line
 nmap <silent> <D-r> :call RunRspecCurrentLineConque()<CR>
+nmap <leader>r :call RunRspecCurrentLineConque()<CR>
 
 " Cmd-Shift-C for Cucumber
 nmap <silent> <D-C> :call RunCucumberCurrentFileConque()<CR>
@@ -454,8 +457,10 @@ set wildignore+=.git,.svn,.log,*.png,*.jpg
 " I may want to use them later
 let g:pathogen_disabled = []
 call add(g:pathogen_disabled, 'vim-asynccommand')
+call add(g:pathogen_disabled, 'vim-jslint')
 if !has("gui_running")
-  " call add(g:pathogen_disabled, 'vim-powerline')
+  call add(g:pathogen_disabled, 'vim-jslint')
+  "call add(g:pathogen_disabled, 'vim-gitgutter')
 else
   "set gfn=DejaVu\ Sans\ Mono:h12
   "set gfn=Menlo\ Bold:h12
@@ -467,6 +472,35 @@ map <Leader>d :bufdo g/^\s*debugger\s*$\\|^\s*binding.pry\s*$/d \| update <CR>
 
 " swap 2 words
 :nnoremap <silent> gw "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>
+
+
+"vroom should use vimux
+let g:vroom_use_vimux=1
+let g:vroom_spec_command='spec'
+
+" speed up vim gutter by running it
+" only on file write and read
+let g:gitgutter_eager = 0
+let g:gitgutter_enabled = 0
+" nmap <leader>r :call vroom#RunTestFile({'options':'--drb'})<CR>
+" vimux
+" Prompt for a command to run
+map ,rp :PromptVimTmuxCommand<CR>
+" Run last command executed by RunVimTmuxCommand
+map ,rl :RunLastVimTmuxCommand
+" Inspect runner pane
+map ,ri :InspectVimTmuxRunner
+" Close all other tmux panes in current window
+map ,rx :CloseVimTmuxPanes<CR>
+
+" Interrupt any command running in the runner pane
+map ,rs :InterruptVimTmuxRunner
+
+" treat .hamlc files as .haml
+au BufRead,BufNewFile *.hamlc set ft=haml
+
+" disabling ex mode. i hate that shit
+map Q <Nop>
 
 call pathogen#infect()
 call pathogen#helptags()
