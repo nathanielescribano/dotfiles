@@ -422,13 +422,14 @@ set autoread
 command! -range -nargs=0 D <line1>,<line2>d|norm ``
 
 " cp yanks the path of the file
-map cp :let @+ = expand("%:p")<CR>
+noremap cp :let @+ = expand("%:p")<CR>
 
 " copies all yanking to clipboard
-set clipboard=unnamed
+" set clipboard=unnamed
 
 " map that aligns on '=' marks
 vnoremap <C-a> :Tabularize /=<CR>
+vnoremap <C-b> :Tabularize /:\zs<CR>
 
 " switch the mapping of 0 and ^
 " since it's a little easier to
@@ -467,6 +468,16 @@ else
   set gfn=Menlo:h12
 endif
 
+" make exiting insert mode quicker in powerline
+if ! has('gui_running')
+  set ttimeoutlen=10
+  augroup FastEscape
+    autocmd!
+    au InsertEnter * set timeoutlen=0
+    au InsertLeave * set timeoutlen=1000
+  augroup END
+endif
+
 " this removes all the ruby deduggers in all buffers
 map <Leader>d :bufdo g/^\s*debugger\s*$\\|^\s*binding.pry\s*$/d \| update <CR>
 
@@ -482,25 +493,32 @@ let g:vroom_spec_command='spec'
 " only on file write and read
 let g:gitgutter_eager = 0
 let g:gitgutter_enabled = 0
+
+" seek jumps
+let g:seek_enable_jumps = 1
 " nmap <leader>r :call vroom#RunTestFile({'options':'--drb'})<CR>
 " vimux
 " Prompt for a command to run
-map ,rp :PromptVimTmuxCommand<CR>
+map ,rp :VimuxPromptCommand<CR>
 " Run last command executed by RunVimTmuxCommand
-map ,rl :RunLastVimTmuxCommand
+map ,rl :VimuxRunLastCommand<CR>
 " Inspect runner pane
-map ,ri :InspectVimTmuxRunner
+map ,ri :VimuxInspectRunner<CR>
 " Close all other tmux panes in current window
-map ,rx :CloseVimTmuxPanes<CR>
+map ,rx :VimuxCloseRunner<CR>
 
 " Interrupt any command running in the runner pane
 map ,rs :InterruptVimTmuxRunner
+
+nnoremap - :Switch<cr>
 
 " treat .hamlc files as .haml
 au BufRead,BufNewFile *.hamlc set ft=haml
 
 " disabling ex mode. i hate that shit
 map Q <Nop>
+
+autocmd BufNewFile,BufReadPost *.hamlbars set filetype=haml
 
 call pathogen#infect()
 call pathogen#helptags()

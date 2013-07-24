@@ -109,3 +109,6 @@
 [submodule "/home/nescribano/.vim/bundle/vim-coffee-script"]
 	path = /home/nescribano/.vim/bundle/vim-coffee-script
 	url = git://github.com/kchmck/vim-coffee-script.git
+[submodule ".vim/bundle/vim-copypath"]
+	path = .vim/bundle/vim-copypath
+	url = git@github.com:vim-scripts/copypath.vim.git
