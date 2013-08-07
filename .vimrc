@@ -484,7 +484,6 @@ map <Leader>d :bufdo g/^\s*debugger\s*$\\|^\s*binding.pry\s*$/d \| update <CR>
 " swap 2 words
 :nnoremap <silent> gw "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>
 
-
 "vroom should use vimux
 let g:vroom_use_vimux=1
 let g:vroom_spec_command='spec'
@@ -492,7 +491,7 @@ let g:vroom_spec_command='spec'
 " speed up vim gutter by running it
 " only on file write and read
 let g:gitgutter_eager = 0
-let g:gitgutter_enabled = 0
+"let g:gitgutter_enabled = 0
 
 " seek jumps
 let g:seek_enable_jumps = 1
@@ -508,7 +507,9 @@ map ,ri :VimuxInspectRunner<CR>
 map ,rx :VimuxCloseRunner<CR>
 
 " Interrupt any command running in the runner pane
-map ,rs :InterruptVimTmuxRunner
+map ,rs :VimuxInterruptRunner<CR>
+map ,ru :VimuxScrollUpInspect<CR>
+map ,rd :VimuxScrollDownInspect<CR>
 
 nnoremap - :Switch<cr>
 
@@ -517,8 +518,20 @@ au BufRead,BufNewFile *.hamlc set ft=haml
 
 " disabling ex mode. i hate that shit
 map Q <Nop>
-
 autocmd BufNewFile,BufReadPost *.hamlbars set filetype=haml
 
 call pathogen#infect()
 call pathogen#helptags()
+
+" arpeggio sequences
+call arpeggio#load()
+Arpeggio noremap oe <Esc>
+Arpeggio noremap! oe <Esc>
+Arpeggio xnoremap oe <Esc>
+Arpeggio snoremap oe <Esc>
+Arpeggio lnoremap oe <Esc>
+Arpeggio nmap tn <Esc>:w<CR>
+Arpeggio vmap tn <Esc>:w<CR>
+Arpeggio imap tn <Esc>:w<CR>
+
+let g:arpeggio_timeoutlens  = {',':80, 's':80}
